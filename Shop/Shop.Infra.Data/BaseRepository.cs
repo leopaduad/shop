@@ -23,5 +23,11 @@ namespace Shop.Infra.Data
 
         public List<Produto> GetAll() { return _collection.Find(new BsonDocument()).ToList(); }
 
+        public Produto Insert(Produto produto) 
+        {
+            _collection.InsertOne(produto);
+            return produto;
+        }
+
     }
 }

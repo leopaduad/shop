@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Shop.Domain.Entities;
 using Shop.Infra.Data;
 using Shop.UI.Models;
 
@@ -13,22 +14,12 @@ namespace Shop.UI.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly BaseRepository _base;
 
-
-        public HomeController(ILogger<HomeController> logger, BaseRepository rebase)
+        public HomeController(ILogger<HomeController> logger)
         {
-            _base = rebase;
             _logger = logger;
         }
 
-        public IActionResult getProduto()
-        {
-            var produto = _base.GetAll();
-
-
-            return Json(produto);
-        }
         public IActionResult Index()
         {
             return View();

@@ -1,0 +1,22 @@
+﻿@model Shop.UI.Models.ProdutoViewModel
+    <div class="row">
+
+
+        @foreach (var item in Model.produto)
+        {
+            <div class="col-sm-4" style="margin-top:10px">
+
+                <div class="card" style="width: 18rem;">
+               
+                    <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 280px; width: 100%; display: block; margin-top:5px;" src="@item.imagens.FirstOrDefault().ToString()" data-holder-rendered="true">
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Nome</h5>
+                        <p class="card-text">@item.ValorFormatado</p>
+                        <i class="fa fa-cart-plus" style="font-size:24px"></i>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
