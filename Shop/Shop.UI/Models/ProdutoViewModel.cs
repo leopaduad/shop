@@ -5,6 +5,7 @@ namespace Shop.UI.Models
 {
     public class ProdutoViewModel
     {
-        public IEnumerable<Produto> produto { get; set; }
+        public IEnumerable<Produto> produtos { get; set; }
+        public Produto produto { get; set; }
     }
 }

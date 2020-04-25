@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Shop.Infra.Data
 {
-    public class BaseRepository
+    public  class BaseRepository : IBaseRepository
     {
         MongoClient _client;
         IMongoDatabase _database;
@@ -29,5 +29,9 @@ namespace Shop.Infra.Data
             return produto;
         }
 
+        public Produto Get(string nome)
+        {
+            return _collection.Find(p => p.Nome == nome).FirstOrDefault();
+        }
     }
 }
